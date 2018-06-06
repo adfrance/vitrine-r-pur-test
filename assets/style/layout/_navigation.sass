@@ -1,0 +1,79 @@
+.nav
+  position: fixed
+  z-index: 50
+  top: 0
+  left: 0
+  height: 100px
+  width: 100%
+  display: flex
+  background: $white
+  justify-content: space-between
+  align-items: center
+  padding: 0 30px
+
+.nav__logo
+  position: absolute
+  width: 180px
+  margin: auto  
+  left: 0
+  right: 0
+
+  img
+    width: 100%
+  
+.nav__shopLink
+  position: absolute
+  left: 100px
+
+.nav__user 
+  a
+    margin-left: 20px
+
+  img
+    height: 20px
+
+
+// Burger
+.nav__burger
+  position: relative
+  width: 27px
+  height: 19px
+  cursor: pointer
+  z-index: 30
+  transition: transform 1s ease-in
+
+  span
+    display: block
+    position: absolute
+    height: 2px
+    width: 100%
+    left: 0
+    background: #0f0f0f
+    border-radius: 9px
+    opacity: 1
+    transform: rotate(0deg)
+    transition: .25s ease-in-out
+
+    &:nth-child(1)
+      top: 0px
+
+    &:nth-child(2)
+      top: 8px
+
+    &:nth-child(3)
+      top: 16px
+
+  &.active
+
+    span:nth-child(1)
+      width: 100%
+      top: 18px
+      transform: rotate(135deg)
+
+    span:nth-child(2)
+      opacity: 0
+      left: -60px
+
+    span:nth-child(3)
+      top: 18px
+      transform: rotate(-135deg)

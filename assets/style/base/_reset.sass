@@ -1,0 +1,109 @@
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video
+  margin: 0
+  padding: 0
+  border: 0
+  font: inherit
+  vertical-align: baseline
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+  display: block
+
+body
+  line-height: 1
+  -webkit-text-size-adjust: 100%
+  -moz-text-size-adjust: 100%
+  text-size-adjust: 100%
+
+ol, ul
+  list-style: none
+
+blockquote, q
+  quotes: none
+
+blockquote
+  &:after, &:before
+    content: ''
+    content: none
+
+q
+  &:after, &:before
+    content: ''
+    content: none
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+*, ::after, ::before, :after, :before
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+
+button, input, select, textarea
+  color: inherit
+  font-size: inherit
+  font-style: inherit
+  font-family: inherit
+  -webkit-border-radius: 0
+  border-radius: 0
+  -webkit-padding-start: 0
+  align-items: flex-start
+  text-index: 0
+  border: none
+  outline: 0
+  background: 0 0
+  padding: 0
+  margin: 0
+  width: auto
+  height: auto
+  line-height: 1em
+
+button
+  height: 1em
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none
+
+input
+  &[type=color], &[type=date], &[type=datetime-local], &[type=datetime], &[type=email], &[type=file], &[type=month], &[type=number], &[type=password], &[type=reset], &[type=search], &[type=submit], &[type=tel], &[type=text], &[type=time], &[type=url], &[type=week]
+    height: 1em
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+
+select, textarea
+  height: 1em
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none
+
+input
+  &[type=color]
+    width: 1em
+  &::-ms-clear
+    display: none
+
+details, summary
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none
+
+mark
+  background: 0 0
+
+hr
+  height: 1px
+  margin: 0
+  padding: 0
+
+u
+  text-decoration: none
+
+table th
+  text-align: left
+
+a
+  color: inherit
+  outline: 0
+  &:-webkit-any-link
+    text-decoration: none
