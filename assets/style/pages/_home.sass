@@ -10,6 +10,7 @@ body, html
   padding-top: 120px
   background-image: url(../img/backgrounds/bandeau-visu-masque.jpg)
   background-size: cover
+  position: relative
   @include sm
     height: 60vh
   @include xs
@@ -51,16 +52,15 @@ body, html
 
 .home-01__description
   display: inline-block
-  width: 320px
-  float: right
-  margin: 100px 11% 0 0
+  width: 30%
+  margin: 110px 0 80px 66%
   @include sm
     display: block
-    float: unset
-    margin: 100px auto 70px auto
+    width: 320px
+    margin: 100px auto 350px auto
   @include xs
-    float: unset
-    margin: 30px 20px
+    margin: 40px auto
+    width: 80%
 
 .home-01__title
   width: 250px
@@ -69,10 +69,28 @@ body, html
   margin-bottom: 50px
 
 .home-01__img
-  width: 60%
-  margin-top: 80px
+  position: absolute
+  bottom: 0
+  width: 50%
   @include xs
+    position: static
     width: 95%
+  
+.homeIntro__bars
+  position: absolute
+  bottom: 10px
+  margin: auto
+  left: 0
+  right: 0
+  display: flex
+  justify-content: space-between
+  width: 400px
+
+
+  div
+    background-color: $cyan
+    height: 3px
+    width: 100px
 
 // home 02
 
@@ -243,28 +261,26 @@ img.home-02__filet
   @include xs
     padding : 20px
 
-.home-quote__text::before, .home-quote__text::after
-  font-weight: 600
-  font-size: 32px
-  @include xs
-    font-size: 20px
-
-.home-quote__text::before
-  content: "<<"
-  @include sm
-    content: ""
-
-.home-quote__text::after
-  content: ">>"
-  @include sm
-    content: ""
-
 // home 03
 
-.home-03__imgWrap img
+.home-03__imgWrap
+  display: flex
+
+.home-03__imgWrapItem
+  position: relative
   width: 50%
-  @include xs
+
+  img
     width: 100%
+
+  &.mask 
+    background: #f4f4f4
+
+    img
+      position: absolute
+      top: 0
+      width: 90%
+
 
 .home-03__title
   margin-top: 50px
@@ -332,12 +348,15 @@ img.home-02__filet
 
 .home-04
   position: relative
-  padding: 50px 8% 140px
-  background: #f8f8f8
+  padding: 50px 8% 40px
+  background: #f5f5f5
+
+.home-04__text
+  margin-bottom: 30px
 
 .home-04__description
   position: absolute
-  width: 320px
+  width: 580px
   top: 90px
   @include xs
     position: static
@@ -364,6 +383,11 @@ img.home-02__filet
   
 .home-04__caption
   position: absolute
+  display: none
+
+.home-04__desc
+  position: relative
+  z-index: 50
 
 .home-04__legend
   margin-bottom: 12px
@@ -417,6 +441,7 @@ img.home-02__filet
 
 .home-particules
   padding: 80px 100px
+  background: #f5f5f5  
   @include sm
     padding: 80px 0
   @include xs
@@ -599,22 +624,24 @@ img.home-particules__FFPItem
 
 .home-05
   display: flex
-  width: 900px
+  padding: 70px 120px 100px
   margin: auto
+  max-width: 1500px
   justify-content: space-between
-  margin-bottom: 100px
+  padding-top: 70px
   @include sm
-    width: unset
-    padding: 0 25px
+    padding: 50px 25px
   @include xs
     display: initial
     width: 100%
 
 
 .home-05__mobile
-  width: 360px
+  width: 60%
   @include xs
     width: 100%
+  @include sm
+    padding: 14% 4%
 
   img
     width: 100%
@@ -622,7 +649,8 @@ img.home-particules__FFPItem
 .home-05__description
   width: 340px
   @include xs
-    width: unset
+    width: 85%
+    margin: auto
 
 .home-05__store
   display: flex
@@ -649,8 +677,7 @@ img.home-particules__FFPItem
 
   img
     position: absolute
-    height: 100%
-    width: 100%
+    height: 121%
     @include sm
       position: static
       width: unset
@@ -676,7 +703,7 @@ img.home-particules__FFPItem
   position: absolute
   z-index: 10
   background: $white
-  width: 440px
+  width: 480px
   top: 20px
   right: 70px
   padding-bottom: 30px
@@ -728,6 +755,9 @@ img.home-particules__FFPItem
     bottom: 0
     right: 0
     margin: auto
+  
+  &.dots img
+    width: 40%
 
 .home-partners__title
   margin-bottom: 20px
@@ -791,10 +821,10 @@ img.home-particules__FFPItem
 // contact
 
 .home-contact
-  margin: 50px 0
+  margin: 50px 0 0
 
 .home-contact__head
-  background: #002850
+  background: #313131
   padding: 30px 0
 
   img
@@ -803,11 +833,14 @@ img.home-particules__FFPItem
     width: 30px
   
 .home-contact__container
+  margin-top: 50px
   max-width: 1100px
   display: block
   margin: auto
   @include sm
     width: 500px
+  @include xs
+    padding: 0 30px 30px
 
 .home-contact__form
   width: 48%
@@ -815,11 +848,19 @@ img.home-particules__FFPItem
   display: inline-block
   @include sm
     width: 100%
+  @include xs
+    width: 100%
+  
+.accordion-toggle
+  cursor: pointer
+  
+.accordion-content
+  display: none
 
 .home-contact__formGroup 
   margin-top: 20px
   input, textarea
-    border: 2px solid $cyan
+    border: 2px solid #313131
     display: block
     padding: 16px 8px
     width: 100%
@@ -853,6 +894,79 @@ img.home-particules__FFPItem
     width: 100%
     margin: auto
     padding-top: 90px
+  @include xs
+    margin-top: 30px
+    width: 100%
 
 .home-contact__adressLabel
   margin-bottom: 20px
+
+
+// join
+
+.join
+  background: #002850
+  padding: 50px 80px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  position: relative
+
+.join__catch, .join-form
+  display: block
+
+.join-separation
+  position: absolute
+  left: 0
+  right: 0
+  margin: auto
+  height: 65%
+  width: 1px
+  background: $white
+  @include sm
+    display: none
+
+.join-form
+
+  input
+    background: $white
+    border: none
+    margin-top: 30px
+    height: 40px
+  
+    &[type="email"]
+      width: 280px
+      padding: 0px 20px
+    
+    &[type="submit"]
+      padding: 0px 30px
+    
+.join-right
+  display: flex
+  align-items: center
+  @include sm
+    display: initial
+
+  .join-social__social-wrap, .join-social__catch
+    display: inline-block
+    @include sm
+      display: block
+    
+  .join-social__social-wrap
+    @include sm
+      width: 200px
+      display: flex
+      justify-content: space-between
+      margin-top: 20px
+
+.join-social__item
+  height: 40px
+  margin-left: 20px
+  @include sm
+    margin-left: 0
+
+.join-social__catch
+  margin-right: 30px
+  @include sm
+    margin-right: 0  
+      
